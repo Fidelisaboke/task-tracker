@@ -2,6 +2,7 @@
 
 import os
 import logging
+import json
 from functions import create_parser, get_data, save_data
 from task import Task
 from datetime import datetime
@@ -82,4 +83,29 @@ elif args.action == "mark-in-progress" or args.action == 'mark-done':
 
     save_data(TASKS_FILE, tasks)
     print("Task updated successfully.")
+
+
+# List tasks
+elif args.action == "list":
+    tasks = get_data(TASKS_FILE)
+    match args.status:
+        case "done":
+            tasks = json.dumps([
+                task for task in tasks if task['status'] == 'done'
+            ], indent=4)
+
+        case "to-do":
+            tasks = json.dumps([
+                task for task in tasks if task['status'] == 'to-do'
+            ], indent=4)
+
+        case "in-progress":
+            tasks = json.dumps([
+                task for task in tasks if task['status'] == 'in-progress'
+            ], indent=4)
+
+        case _:
+            tasks = json.dumps(tasks, indent=4)
+
+    print(tasks)
 
