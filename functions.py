@@ -1,4 +1,6 @@
 import argparse
+import os
+import json
 
 def create_parser():
     """ Creates the argument parser """
@@ -48,3 +50,18 @@ def create_parser():
     list_subparser.add_argument("status", help="The task status.")
 
     return parser
+
+
+def get_data(filename):
+    """ Gets data from file. """
+
+    # Create JSON file if not present
+    if not os.path.exists(filename):
+        open(filename, "x").close()
+
+    with open(filename, "r") as file:
+        if os.path.getsize(filename) > 0:
+            return json.load(file)
+    
+    return []
+    

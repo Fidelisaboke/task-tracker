@@ -3,16 +3,11 @@
 import os
 import json
 import logging
-from functions import create_parser
+from functions import create_parser, get_data
 from task import Task
 
 # Tasks file
 TASKS_FILE = "tasks.json"
-
-# Create JSON file if not present
-if not os.path.exists(TASKS_FILE):
-    open(TASKS_FILE, "x").close()
-
 
 # Parse command line arguments
 parser = create_parser()
@@ -21,13 +16,7 @@ args = parser.parse_args()
 
 # Add a new task.
 if args.action == "add":
-
-    # Check if any data exists
-    with open(TASKS_FILE, "r") as file:
-        if os.path.getsize(TASKS_FILE) > 0:
-            data = json.load(file)
-        else:
-            data = []
+    data = get_data(TASKS_FILE)
         
     # Set the current index
     curr_index = 1
