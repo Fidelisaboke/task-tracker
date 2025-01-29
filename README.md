@@ -1,4 +1,9 @@
-# Task Tracker CLI
+[![MIT License][mit-shield]][mit-link]
+
+[mit-shield]: https://img.shields.io/badge/License-MIT-blue.svg
+[mit-link]: https://opensource.org/licenses/MIT
+
+## Project Description
 This is a CLI application that managers tasks. It makes use of a JSON file to store and manage the tasks through commands entered in the CLI.
 
 ## Table of Contents
@@ -91,3 +96,6 @@ python3 main.py list done
 ## Acknowledgements
 I would like to appreciate the creators of the following resources:
 - [Roadmap.sh - Task Tracker](https://roadmap.sh/projects/task-tracker): For information on the Task Tracker CLI project.
+
+## License
+This project is licensed under a [MIT license](https://opensource.org/licenses/MIT).
