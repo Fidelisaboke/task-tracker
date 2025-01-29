@@ -19,6 +19,7 @@ This is a CLI application that managers tasks. It makes use of a JSON file to st
     - [Update Task Status](#update-task-status)
     - [Listing Tasks](#listing-tasks)
 3. [Acknowledgements](#acknowledgements)
+4. [License](#license)
 
 ## Getting Started
 ### Prerequisites
