@@ -1,6 +1,19 @@
 # Task Tracker CLI
 This is a CLI application that managers tasks. It makes use of a JSON file to store and manage the tasks through commands entered in the CLI.
 
+## Table of Contents
+1. [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
+2. [Usage](#usage)
+    - [Help Message](#help-message)
+    - [Add Task](#add-task)
+    - [Update Task](#update-task)
+    - [Delete Task](#delete-task)
+    - [Update Task Status](#update-task-status)
+    - [Listing Tasks](#listing-tasks)
+3. [Acknowledgements](#acknowledgements)
+
 ## Getting Started
 ### Prerequisites
 - Python 3.10 or higher
@@ -54,7 +67,7 @@ python3 main.py mark-in-progress 1
 python3 main.py mark-done 1
 ```
 
-#### Listing tasks
+#### Listing Tasks
 - List all tasks:
 ```bash
 python3 main.py list
@@ -74,3 +87,7 @@ python3 main.py list in-progress
 ```bash
 python3 main.py list done
 ```
+
+## Acknowledgements
+I would like to appreciate the creators of the following resources:
+- [Roadmap.sh - Task Tracker](https://roadmap.sh/projects/task-tracker): For information on the Task Tracker CLI project.
