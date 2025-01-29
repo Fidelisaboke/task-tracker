@@ -85,7 +85,7 @@ match args.action:
         print("Task updated successfully.")
 
 
-# List tasks
+    # List tasks
     case "list":
         tasks = get_data(TASKS_FILE)
         match args.status:

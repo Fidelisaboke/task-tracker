@@ -1,9 +1,11 @@
+""" This module contains useful functions for the program. """
+
 import argparse
 import os
 import json
 
 def create_parser():
-    """ Creates the argument parser """
+    """ Creates the argument parser. """
 
     # Main parser
     parser = argparse.ArgumentParser(

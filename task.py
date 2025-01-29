@@ -1,3 +1,5 @@
+""" This module contains the Task class, representing the structure of a task. """
+
 from datetime import datetime
 
 class Task:
