@@ -31,9 +31,11 @@ def create_parser():
 
     # Mark a task as in progress
     in_progress_subparser = subparsers.add_parser("mark-in-progress", help="Mark a task as in progress.")
+    in_progress_subparser.add_argument("id", type=int, help="Task id")
 
     # Mark a task as done
     task_done_subparser = subparsers.add_parser("mark-done", help="Mark a task as done.")
+    task_done_subparser.add_argument("id", type=int, help="Task id")
 
     # Listing tasks
     list_subparser = subparsers.add_parser("list", help="List all tasks.")
