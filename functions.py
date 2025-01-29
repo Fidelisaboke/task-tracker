@@ -39,7 +39,7 @@ def create_parser():
 
     # Listing tasks
     list_subparser = subparsers.add_parser("list", help="List all tasks.")
-    list_subparser.add_argument("status", help="The task status.")
+    list_subparser.add_argument("status", help="The task status.", action="store_true")
 
     return parser
 
