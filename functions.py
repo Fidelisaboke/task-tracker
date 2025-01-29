@@ -54,4 +54,12 @@ def get_data(filename):
             return json.load(file)
     
     return []
+
+
+def save_data(filename, data):
+    """ Saves data to the file. """
+
+    with open(filename, "w") as file:
+        serialized_data = json.dumps(data, indent=4)
+        file.write(serialized_data)
     

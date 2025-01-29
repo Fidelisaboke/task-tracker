@@ -1,9 +1,8 @@
 """ Main program """
 
 import os
-import json
 import logging
-from functions import create_parser, get_data
+from functions import create_parser, get_data, save_data
 from task import Task
 from datetime import datetime
 
@@ -17,33 +16,30 @@ args = parser.parse_args()
 
 # Add a new task.
 if args.action == "add":
-    data = get_data(TASKS_FILE)
+    # Get tasks frm the task file
+    tasks = get_data(TASKS_FILE)
         
     # Set the current index
     curr_index = 1
-    if len(data) > 0:
-        curr_index = len(data) + 1
+    if len(tasks) > 0:
+        curr_index = len(tasks) + 1
 
     # Create a new task
     task = Task(curr_index, args.description)
     task = vars(task)
+    tasks.append(task)
     
     # Save the tasks to the tasks file
-    with open(TASKS_FILE, "w") as file:
-        data.append(task)
-        serialized_data = json.dumps(data, indent=4)
-        file.write(serialized_data)
-
-        print(f"Task added successfully (ID: {task['id']})")
+    save_data(TASKS_FILE, tasks)
+    print(f"Task added successfully (ID: {task['id']})")
 
 
 # Update an existing task
 elif args.action == "update":
-    tasks = get_data(TASKS_FILE)
-    print(tasks)        
+    # Get tasks from the tasks file
+    tasks = get_data(TASKS_FILE)  
 
     for task in tasks:
-
         # Update task if it exists
         if task['id'] == args.id:
             task['description'] = args.description
@@ -55,12 +51,8 @@ elif args.action == "update":
         raise SystemExit(1)
 
     # Save the tasks to the tasks file
-    with open(TASKS_FILE, "w") as file:
-        tasks.append(task)
-        serialized_tasks_data = json.dumps(tasks, indent=4)
-        file.write(serialized_tasks_data)
-
-        print("Task updated successfully.")
+    save_data(TASKS_FILE, tasks)
+    print("Task updated successfully.")
 
     
     
