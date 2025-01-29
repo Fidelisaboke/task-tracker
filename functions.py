@@ -64,7 +64,7 @@ def create_parser():
     list_subparser.add_argument(
         "status", 
         help="The task status.", 
-        action="store_true"
+        nargs="?"
     )
 
     return parser
