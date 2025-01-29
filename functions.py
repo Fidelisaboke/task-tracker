@@ -13,16 +13,6 @@ def create_parser():
         epilog="When stuck, refer to this guide!"
     )
 
-    # Actions
-    actions = [
-        "add",
-        "update",
-        "delete",
-        "mark-in-progress",
-        "mark-done",
-        "list"
-    ]
-
     # Subparsers
     subparsers = parser.add_subparsers(dest="action", help="Available actions")
 
