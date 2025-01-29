@@ -9,7 +9,7 @@ def create_parser():
 
     # Main parser
     parser = argparse.ArgumentParser(
-        prog="Task Tracker",
+        prog="task-cli",
         description="A CLI application built in Python",
         formatter_class = argparse.ArgumentDefaultsHelpFormatter,
         epilog="When stuck, refer to this guide!"
