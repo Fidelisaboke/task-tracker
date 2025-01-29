@@ -87,6 +87,7 @@ match args.action:
 
 # List tasks
     case "list":
+        tasks = get_data(TASKS_FILE)
         match args.status:
             case "done":
                 tasks = json.dumps([
