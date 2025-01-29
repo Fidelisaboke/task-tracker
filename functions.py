@@ -30,12 +30,12 @@ def create_parser():
 
     # Update a task
     update_task_subparser = subparsers.add_parser("update", help="Update an existing task.")
-    update_task_supbarser.add_argument("id", type=int, help="Task id")
+    update_task_subparser.add_argument("id", type=int, help="Task id")
     update_task_subparser.add_argument("description", type=str, help="Task description")
 
     # Delete a task
     delete_task_subparser = subparsers.add_parser("delete", help="Delete an existing task.")
-    delete_task_subparser = subparsers.add_argument("id", type=int, help="Task id")
+    delete_task_subparser.add_argument("id", type=int, help="Task id")
 
     # Mark a task as in progress
     in_progress_subparser = subparsers.add_parser("mark-in-progress", help="Mark a task as in progress.")
