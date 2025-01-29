@@ -66,3 +66,22 @@ elif args.action == "delete":
     
     save_data(TASKS_FILE, tasks)
     print("Task removed successfully.")
+
+# Mark a task as in progress or done
+elif args.action == "mark-in-progress" or args.action == 'mark-done':
+    tasks = get_data(TASKS_FILE)
+
+    for task in tasks:
+        if task['id'] == args.id and args.action == 'mark-in-progress':
+            task['status'] = "in-progress"
+            break
+        elif task['id'] == args.id and args.action == 'mark-done':
+            task['status'] = 'done'
+            break
+    else:
+        print(f"Task does not exist (ID: {args.id})")
+        raise SystemExit(1)
+
+    save_data(TASKS_FILE, tasks)
+    print("Task updated successfully.")
+
