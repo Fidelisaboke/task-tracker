@@ -54,6 +54,15 @@ elif args.action == "update":
     save_data(TASKS_FILE, tasks)
     print("Task updated successfully.")
 
-    
-    
+elif args.action == "delete":
+    # Get tasks from tasks file
+    tasks = get_data(TASKS_FILE)
 
+    for task in tasks:
+        # Remove task  if it exists
+        if task['id'] == args.id:
+            tasks.remove(task)
+            break
+    
+    save_data(TASKS_FILE, tasks)
+    print("Task removed successfully.")
