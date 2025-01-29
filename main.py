@@ -16,7 +16,6 @@ args = parser.parse_args()
 
 # Add a new task.
 if args.action == "add":
-    # Get tasks frm the task file
     tasks = get_data(TASKS_FILE)
         
     # Set the current index
@@ -29,14 +28,12 @@ if args.action == "add":
     task = vars(task)
     tasks.append(task)
     
-    # Save the tasks to the tasks file
     save_data(TASKS_FILE, tasks)
     print(f"Task added successfully (ID: {task['id']})")
 
 
 # Update an existing task
 elif args.action == "update":
-    # Get tasks from the tasks file
     tasks = get_data(TASKS_FILE)  
 
     for task in tasks:
@@ -50,12 +47,12 @@ elif args.action == "update":
         print(f"Task does not exist (ID: {args.id})")
         raise SystemExit(1)
 
-    # Save the tasks to the tasks file
     save_data(TASKS_FILE, tasks)
     print("Task updated successfully.")
 
+
+# Delete a specific task
 elif args.action == "delete":
-    # Get tasks from tasks file
     tasks = get_data(TASKS_FILE)
 
     for task in tasks:
@@ -66,6 +63,7 @@ elif args.action == "delete":
     
     save_data(TASKS_FILE, tasks)
     print("Task removed successfully.")
+
 
 # Mark a task as in progress or done
 elif args.action == "mark-in-progress" or args.action == 'mark-done':
