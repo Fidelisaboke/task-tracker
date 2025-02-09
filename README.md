@@ -5,7 +5,7 @@
 [mit-link]: https://opensource.org/licenses/MIT
 
 ## Project Description
-This is a CLI application that managers tasks. It makes use of a JSON file to store and manage the tasks through commands entered in the CLI.
+This is a CLI application that manages tasks. It makes use of a JSON file to store and manage the tasks through commands entered in the CLI.
 
 ## Table of Contents
 1. [Getting Started](#getting-started)
